@@ -46,24 +46,41 @@ mysqli_query($dbc,$query);
 
 }
 ?>
-<form method="post" action="">
 
-Mottagare:<input type="text" name="mottagare"required></input><br>
 
-Produkt: <input type="text" name="produkt"required></input><br>
+<!DOCTYPE html>
+<html>
 
-Meddelande: <input type="text" name="meddelande"></input><br>
+	<head>
+		<title> TechBitUF </title>
+		<link rel="stylesheet" href="formCSS.css" />
 
-Ansvarig: <input type="text" name="ansvarig"></input><br>
+	</head>
 
-Pris: <input type="text" name="pris"></input><br>
+	<body>
+	
+		<form method="post" action="">
 
-Kund namn:<input type="text" name="kund_namn"required></input><br>
+		Mottagare:<input type="text" name="mottagare"required></input><br>
 
-Kontaktuppgifter:<input type="text" name="kontaktuppgifter"required></input><br>
+		Produkt: <input type="text" name="produkt"required></input><br>
 
-Extra information: <input type="text" name="extra"></input><br>
+		Meddelande: <input type="text" name="meddelande"></input><br>
 
-<input type="submit">
+		Ansvarig: <input type="text" name="ansvarig"></input><br>
 
-</form>
+		Pris: <input type="text" name="pris"></input><br>
+
+		Kund namn:<input type="text" name="kund_namn"required></input><br>
+
+		Kontaktuppgifter:<input type="text" name="kontaktuppgifter"required></input><br>
+
+		Extra information: <input type="text" name="extra"></input><br>
+
+		<input type="submit">
+
+		</form>
+
+	</body>
+	
+</html>
