@@ -18,7 +18,7 @@ if(isset($_POST['usr']) && isset($_POST['pass'])){
 	
 	if($row = mysqli_fetch_array($result)){
 		$_SESSION['login'] = true;
-		$_SESSION['usr'] = $row['admin_id'];
+		$_SESSION['usr_id'] = $row['admin_id'];
 		header("Location: /techbituf/form/");
 	}
 	else{

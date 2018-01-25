@@ -4,7 +4,7 @@ create table tickets (
       ticket_id int(8) PRIMARY KEY AUTO_INCREMENT,
       tid_inkom TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
       status int(1) DEFAULT 1,
-      mottagare varchar(32),
+      mottagare int(8),
       ansvarig varchar(32) DEFAULT null,
       produkt varchar(64),
       meddelande text(500),
@@ -12,7 +12,8 @@ create table tickets (
       pris float,
       kund_namn varchar(64),
       kontaktuppgifter text(500),
-      extra text(500)
+      extra text(500),
+	  FOREIGN KEY (mottagare) REFERENCES admins(admin_id)
 );
 
 

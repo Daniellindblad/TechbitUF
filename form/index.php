@@ -41,10 +41,10 @@ if(isset($_POST['firstname']) && isset($_POST['lastname']) && isset($_POST['medd
 
 	
 
-	$mottagare = "heeej";
+	$mottagare = $_SESSION['usr_id'];
 
 	$query = "INSERT INTO tickets (mottagare,produkt,kund_namn,kontaktuppgifter,meddelande,pris,extra) VALUES ";
-	$query .= '("'.$mottagare.'","'.$produkt.'","'.$kund_namn.'","'.$kontaktuppgifter.'","'.$meddelande.'","'.$pris.'","'.$extra.'")';
+	$query .= '('.$mottagare.',"'.$produkt.'","'.$kund_namn.'","'.$kontaktuppgifter.'","'.$meddelande.'","'.$pris.'","'.$extra.'")';
 
 	mysqli_query($dbc,$query);
 	//echo $query;
@@ -65,6 +65,7 @@ if(isset($_POST['firstname']) && isset($_POST['lastname']) && isset($_POST['medd
 	<body>
 	
 	<a href="logout.php"> Logga ut </a>
+	<a href="/techbituf/admin/"> Admin Panel</a>
 	
 	
 	<form method="POST">
