@@ -5,8 +5,8 @@ if(!isset($_SESSION['login'])){
 	header("Location: /techbituf/login/");
 }
 if(isset($_POST['firstname']) && isset($_POST['lastname']) && isset($_POST['meddelande']) && isset($_POST['produkt']) && isset($_POST['kontaktuppgifter'])){
+	
 	$dbc = mysqli_connect("localhost","root","","techbit");
-
 
 	mysqli_query($dbc,"SET CHARSET utf8");
 
