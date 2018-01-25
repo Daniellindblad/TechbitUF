@@ -1,5 +1,9 @@
 ﻿<?php
 session_start();
+
+if(!isset($_SESSION['login'])){
+	header("Location: /techbituf/login/");
+}
 if(isset($_POST['firstname']) && isset($_POST['lastname']) && isset($_POST['meddelande']) && isset($_POST['produkt']) && isset($_POST['kontaktuppgifter'])){
 	$dbc = mysqli_connect("localhost","root","","techbit");
 
@@ -54,12 +58,13 @@ if(isset($_POST['firstname']) && isset($_POST['lastname']) && isset($_POST['medd
 <html>
 
 	<head>
-	
 		<title> TechBitUF </title>
 		<link rel="stylesheet" href="formCSS.css" />
 	</head>
 
 	<body>
+	
+	<a href="logout.php"> Logga ut </a>
 	
 	
 	<form method="POST">
