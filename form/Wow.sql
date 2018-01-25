@@ -8,7 +8,7 @@ create table tickets (
       ansvarig varchar(32) DEFAULT null,
       produkt varchar(64),
       meddelande text(500),
-      tid_klar TIMESTAMP default null,
+      tid_klar TIMESTAMP,
       pris float,
       kund_namn varchar(64),
       kontaktuppgifter text(500),
