@@ -5,7 +5,7 @@ if(!isset($_SESSION['login'])){
 	header("Location: /techbituf/login/");
 }
 if(isset($_POST['firstname']) && isset($_POST['lastname']) && isset($_POST['meddelande']) && isset($_POST['produkt']) && isset($_POST['kontaktuppgifter'])){
-	
+
 	$dbc = mysqli_connect("localhost","root","","techbit");
 
 	mysqli_query($dbc,"SET CHARSET utf8");
@@ -14,32 +14,32 @@ if(isset($_POST['firstname']) && isset($_POST['lastname']) && isset($_POST['medd
 	$kontaktuppgifter = $_POST['kontaktuppgifter'];
 	$pris = $_POST['produkt'];
 	$meddelande = $_POST['meddelande'];
-	
+
 	if($pris == "50"){
-		$produkt = "Felsökning - Mjukvara";	
+		$produkt = "Felsökning - Mjukvara";
 	}
 	else if($pris == "80"){
-		$produkt = "Felsökning - Hårdvara";	
+		$produkt = "Felsökning - Hårdvara";
 	}
 	else if($pris == "100"){
-		$produkt = "Årgärd - Mjukvara";	
+		$produkt = "Årgärd - Mjukvara";
 	}
 	else if($pris == "150"){
 		$produkt = "Installation - Hårdvara";
 	}
 	else if($pris == "200"){
-		$produkt = "Paketpris";	
+		$produkt = "Paketpris";
 	}
 	else{
-		$produkt = "unknown";	
+		$produkt = "unknown";
 	}
-	
+
 	$extra = "";
 	if(isset($_POST['extra'])){
 		$extra = $_POST['extra'];
 	}
 
-	
+
 
 	$mottagare = $_SESSION['usr_id'];
 
@@ -63,15 +63,15 @@ if(isset($_POST['firstname']) && isset($_POST['lastname']) && isset($_POST['medd
 	</head>
 
 	<body>
-	
+
 	<a href="logout.php"> Logga ut </a>
 	<a href="/techbituf/admin/"> Admin Panel</a>
-	
-	
+
+
 	<form method="POST">
-	<ul class="form-style-1" >
+	<ul class="form-style-1">
 		<li><label>Kundnamn <span class="required">*</span></label><input type="text" name="firstname" class="field-divided" placeholder="Förnamn" required />&nbsp;<input type="text" name="lastname" class="field-divided" placeholder="Efternamn" required /></li>
-		
+
 			<label>Pris/Produkt<span class="required">*</span></label>
 			<select name="produkt" class="field-select" required>
 			<option value="50">Felsökning 50kr - Mjukvara</option>
@@ -98,9 +98,9 @@ if(isset($_POST['firstname']) && isset($_POST['lastname']) && isset($_POST['medd
 		</li>
 	</ul>
 	</form>
-		
-		
+
+
 
 	</body>
-	
+
 </html>

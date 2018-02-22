@@ -7,7 +7,7 @@ if(!isset($_SESSION['login'])){
 
 $dbc = mysqli_connect("localhost","root","","techbit");
 mysqli_query($dbc,"SET CHARSET utf8");
-	
+
 
 ?>
 
@@ -21,31 +21,43 @@ mysqli_query($dbc,"SET CHARSET utf8");
 	</head>
 
 	<body>
-	
+
 	<a href="logout.php"> Logga ut </a>
 	<a href="/techbituf/form/"> Registrera ärende </a>
-	
-	<br>
-	<?php
-	
-	
-	
-	$query = "SELECT * FROM tickets";
-	
-	$result = mysqli_query($dbc,$query);
-	
-	while($row = mysqli_fetch_array($result)){ // skriv ut alla ärenden
-		
-		echo "Ärendenummer: " . $row['ticket_id'] . " - ";
-		echo $row['produkt'] . "<br>";
-		
-	}
-	
-	
-	?>
-		
-		
+	<div class="ok">
+		<div class="first second">Ärendenummer: 21<br>tid_inkom:
+		</div>
+
+		<div class="second">Status:
+		</div>
+			<div class="third">Ansvarig:
+			</div>
+				<div class="forth">Produkt:
+				</div>
+				<div class="cube1"></div>
+				<div class="cube2"></div>
+				<div class="cube3"></div>
+				<div class="cube4"></div>
+</div>
+
 
 	</body>
-	
+
 </html>
+<?php
+/*
+
+
+$query = "SELECT * FROM tickets";
+
+$result = mysqli_query($dbc,$query);
+
+while($row = mysqli_fetch_array($result)){ // skriv ut alla ärenden
+
+	echo "Ärendenummer: " . $row['ticket_id'] . " - ";
+	echo $row['produkt'] . " - " . $row['tid_inkom'] . "<br>";
+
+}
+
+*/
+?>
